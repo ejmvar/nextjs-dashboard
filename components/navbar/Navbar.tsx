@@ -1,13 +1,22 @@
 import { HomeIcon } from "@primer/octicons-react"
 import Link from "next/link"
 
+interface NavItemModel {
+  name: string
+  href: string
+  icon?: React.ReactNode
+  className?: string
+}
+
+
+
 const iconClass = "h-6 w-6 text-white mr-2"
-const navItems = [
+const navItems:NavItemModel[] = [
   {
     name: "Home", href: "/",
     icon: <HomeIcon className={`${iconClass}`} />
   },
-  { name: " ... ", href: "", className: "flex flex-1 border rounded" },
+  { name: "  ", href: "", className: "flex flex-1 " },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Pricing", href: "/pricing" },
