@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 
 
 export const Navbar = () => {
@@ -15,14 +17,14 @@ export const Navbar = () => {
           p-2 items-center justify-center
         
         "> . . . </span>
-        <a href="/about" className="p-2 items-baseline "> About </a>
-        <a href="/contact" className="p-2 items-baseline "> Contact </a>
-        <a href="/pricing" className="p-2 items-baseline "> Pricing </a>
-        <a href="/general" className="p-2 items-baseline "> General </a>
+        <Link href="/about" className="p-2 items-baseline "> About </Link>
+        <Link href="/contact" className="p-2 items-baseline "> Contact </Link>
+        <Link href="/pricing" className="p-2 items-baseline "> Pricing </Link>
+        <Link href="/general" className="p-2 items-baseline "> General </Link>
 
       </nav>
 
-      
+
 
     </>
   )
