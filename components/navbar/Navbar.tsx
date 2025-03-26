@@ -28,7 +28,7 @@ export const Navbar = () => {
             path={item.path}
             isActiveClass={isActiveClass}
             classNamePropNN={`
-              mr-2 pr-2  
+              mr-2  
               flex flex-row  items-center 
                ${item.classNamePropNN || ''}`}
           >
