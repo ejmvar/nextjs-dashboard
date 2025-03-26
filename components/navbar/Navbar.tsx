@@ -2,17 +2,28 @@
 
 export const Navbar = () => {
   return (
-    <nav className="flex bg-blue-800 bg-opacity-30 
-    p-2 m-2 rounded">
+    <>
+      <nav className="flex bg-blue-800 bg-opacity-30 
+    p-2 m-2 rounded
+    text-amber-50 text-1xl">
 
+        <span className="p-2 items-center"> Home </span>
 
-      <div className="text-amber-50 text-2xl"> 
-      <span> Home </span>
-      <a href="/About" className=""> About </a>
-      <a href="/Contact"  className=""> Contact </a>
-      <a href="/Pricing" className=""> Pricing </a>
-      <a href="/General" className=""> General </a>
-      </div>
-    </nav> 
-    )
-  }
+        <span className="flex flex-1 border='3px double green' 
+         rounded-lg bg-blue-800 bg-opacity-30
+
+          p-2 items-center justify-center
+        
+        "> . . . </span>
+        <a href="/about" className="p-2 items-baseline "> About </a>
+        <a href="/contact" className="p-2 items-baseline "> Contact </a>
+        <a href="/pricing" className="p-2 items-baseline "> Pricing </a>
+        <a href="/general" className="p-2 items-baseline "> General </a>
+
+      </nav>
+
+      
+
+    </>
+  )
+}
