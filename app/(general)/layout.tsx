@@ -23,12 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div >
-      <div
+    <>
+      <main 
+      className="flex flex-col items-center p-24
+       min-h-screen bg-white dark:bg-black text-black dark:text-white"
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
