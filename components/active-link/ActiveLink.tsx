@@ -2,24 +2,26 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface ActiveLinkProps {
+export interface ActiveLinkProps {
   text: string;
   path: string;
+  icon?: React.ReactNode;
   children?: React.ReactNode;
-  className?: string;
+  classNamePropNN?: string;
+  isActiveClass?: string;
 }
 
-export const ActiveLink = ({ text, path, children, className }: ActiveLinkProps) => {
+export const ActiveLink = ({ text, path, children, classNamePropNN, isActiveClass }: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === path;
 
   return (
-    <Link 
+    <Link
       href={path}
       prefetch={true}
-      onMouseEnter={() => {}}  // This ensures the prefetch behavior is triggered on hover
-      className={`  ${className} ${isActive ? 'text-blue-200 underline' : ''}
-      mr-2 pr-2 items-center 
+      onMouseEnter={() => { }}  // This ensures the prefetch behavior is triggered on hover
+      className={`  ${classNamePropNN} ${isActive ? {isActiveClass} : ''}
+      
       `}
     >
       {children}
