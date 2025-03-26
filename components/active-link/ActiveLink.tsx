@@ -12,8 +12,8 @@ export interface ActiveLinkProps {
   baseClass?: string; // applied to all links
 }
 
-export const ActiveLink = ({ text, path, children, 
-  baseClass, isActiveClass,classSpecialItem }: ActiveLinkProps) => {
+export const ActiveLink = ({ text, path, children,
+  baseClass, isActiveClass, classSpecialItem }: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === path;
 
