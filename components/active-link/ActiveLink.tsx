@@ -18,7 +18,9 @@ export const ActiveLink = ({ text, path, children, className }: ActiveLinkProps)
       href={path}
       prefetch={true}
       onMouseEnter={() => {}}  // This ensures the prefetch behavior is triggered on hover
-      className={`${className} ${isActive ? 'text-blue-200 underline' : ''}`}
+      className={`  ${className} ${isActive ? 'text-blue-200 underline' : ''}
+      mr-2 pr-2 items-center 
+      `}
     >
       {children}
       {text}

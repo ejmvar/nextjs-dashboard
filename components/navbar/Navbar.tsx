@@ -29,7 +29,9 @@ export const Navbar = () => {
             key={item.name}
             text={item.name}
             path={item.href}
-            className={`m-2 p-2 items-baseline flex flex-row ${item.className || ''}`}
+            className={`
+              mr-2 pr-2 items-baseline flex flex-row
+               ${item.className || ''}`}
           >
             {item.icon}
           </ActiveLink>
