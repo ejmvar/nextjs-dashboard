@@ -7,11 +7,9 @@ import { ActiveLink, ActiveLinkProps } from '@/components';
 const isActiveClass = "text-blue-200 underline border" // global
 const iconClass = "h-6 w-6 text-white mr-2" // only some icons
 const navItems: ActiveLinkProps[] = [ // detailed list
-  {
-    text: "Home", path: "/",
-    icon: <HomeIcon className={`${iconClass}`} />
-  },
-  { text: "  ", path: "", classNamePropNN: "flex flex-1 " },
+  { text: "Home", path: "/",
+    icon: <HomeIcon className={`${iconClass}`} />  },
+  { text: "  ", path: "", classSpecialItem: "flex flex-1 " },
   { text: "About", path: "/about" },
   { text: "Contact", path: "/contact" },
   { text: "Pricing", path: "/pricing" },
@@ -24,13 +22,17 @@ export const Navbar = () => {
         {navItems.map((item) => (
           <ActiveLink
             key={item.path}
-            text={item.text}
-            path={item.path}
             isActiveClass={isActiveClass}
-            classNamePropNN={`
+            {...item}
+            // {item.icon}
+            // text={item.text}
+            // path={item.path}
+            classSpecialItem={`${item.classSpecialItem || ''}`}
+            baseClass={`
+              flex flex-row  items-center
               mr-2 rounded p-2
-                            border-4 border-double 
-               border-white-900
+              border-4 border-double
+              border-white-900
 
               hover:bg-blue-200   hover:bg-opacity-200
               hover:text-red-700  hover:text-opacity-800
@@ -38,10 +40,8 @@ export const Navbar = () => {
               text-white
               
               
-              flex flex-row  items-center 
-               ${item.classNamePropNN || ''}`}
+              `}
           >
-            {item.icon}
           </ActiveLink>
         ))}
       </nav>

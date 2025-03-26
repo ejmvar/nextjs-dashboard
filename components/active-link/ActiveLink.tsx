@@ -7,11 +7,13 @@ export interface ActiveLinkProps {
   path: string;
   icon?: React.ReactNode;
   children?: React.ReactNode;
-  classNamePropNN?: string;
-  isActiveClass?: string;
+  classSpecialItem?: string; // applied this item
+  isActiveClass?: string; // applied when the link is active
+  baseClass?: string; // applied to all links
 }
 
-export const ActiveLink = ({ text, path, children, classNamePropNN, isActiveClass }: ActiveLinkProps) => {
+export const ActiveLink = ({ text, path, children, 
+  baseClass, isActiveClass,classSpecialItem }: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === path;
 
@@ -20,13 +22,15 @@ export const ActiveLink = ({ text, path, children, classNamePropNN, isActiveClas
       href={path}
       prefetch={true}
       onMouseEnter={() => { }}  // This ensures the prefetch behavior is triggered on hover
-      className={`  ${classNamePropNN} ${isActive ? {isActiveClass} : ''}
+      className={`  ${baseClass || ''} 
+                    ${classSpecialItem || ''} 
+                    ${isActive ? { isActiveClass } : ''}
       
       `}
     >
       {children}
       {text}
-       {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
+      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
     </Link>
   );
 }
