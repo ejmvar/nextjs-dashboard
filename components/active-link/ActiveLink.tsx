@@ -26,6 +26,7 @@ export const ActiveLink = ({ text, path, children, classNamePropNN, isActiveClas
     >
       {children}
       {text}
+       {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
     </Link>
   );
 }

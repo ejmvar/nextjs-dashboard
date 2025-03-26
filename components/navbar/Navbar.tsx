@@ -4,7 +4,7 @@ import { ActiveLink, ActiveLinkProps } from '@/components';
 
 
 
-const isActiveClass = "text-blue-200 underline" // global
+const isActiveClass = "text-blue-200 underline border" // global
 const iconClass = "h-6 w-6 text-white mr-2" // only some icons
 const navItems: ActiveLinkProps[] = [ // detailed list
   {
@@ -28,7 +28,16 @@ export const Navbar = () => {
             path={item.path}
             isActiveClass={isActiveClass}
             classNamePropNN={`
-              mr-2  
+              mr-2 rounded p-2
+                            border-4 border-double 
+               border-white-900
+
+              hover:bg-blue-200   hover:bg-opacity-200
+              hover:text-red-700  hover:text-opacity-800
+              hover:border-green-200 hover:border-opacity-800
+              text-white
+              
+              
               flex flex-row  items-center 
                ${item.classNamePropNN || ''}`}
           >
