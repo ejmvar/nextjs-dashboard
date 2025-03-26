@@ -1,5 +1,5 @@
 import { HomeIcon } from "@primer/octicons-react"
-import Link from "next/link"
+import { ActiveLink } from '@/components';
 
 interface NavItemModel {
   name: string
@@ -7,8 +7,6 @@ interface NavItemModel {
   icon?: React.ReactNode
   className?: string
 }
-
-
 
 const iconClass = "h-6 w-6 text-white mr-2"
 const navItems:NavItemModel[] = [
@@ -25,29 +23,18 @@ const navItems:NavItemModel[] = [
 export const Navbar = () => {
   return (
     <>
-      <nav className="flex bg-blue-800 bg-opacity-30 
-    p-2 m-2 rounded
-    text-amber-50 text-1xl">
+      <nav className="flex bg-blue-800 bg-opacity-30 p-2 m-2 rounded text-amber-50 text-1xl">
         {navItems.map((item) => (
-          <Link
+          <ActiveLink
             key={item.name}
-            href={item.href}
-            className={`m-2 p-2 items-baseline flex flex-row ${item.className}`} 
+            text={item.name}
+            path={item.href}
+            className={`m-2 p-2 items-baseline flex flex-row ${item.className || ''}`}
           >
             {item.icon}
-            {item.name}
-          </Link>
-        )
-        )
-        }
-
-
-
+          </ActiveLink>
+        ))}
       </nav>
- 
-
-
-
     </>
   )
 }
