@@ -1,4 +1,136 @@
 .link {
+  border: 5ps double black;
+  margin: 0 .25rem;
+
+  &:hover {
+    /* background-color: #4f46e5; */
+    border: 3px double white;
+    /* Indigo 600 */
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: red;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  
+    transition: all 0.2s ease;
+    
+  }
+  &.active-link {
+    background-color: green;
+  }
+  &.active {
+    background-color: green;
+  }
+}
+
+/* .link:hover {
+  background-color: #4f46e5; */
+  /* Indigo 600 */
+  /* color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.2s ease;
+} */
+.active {
+  background-color: green;
+  /* background-color: #312e81; */
+  /* Indigo 900 */
+  /* color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+  background-color: red; */
+}
+.inactive {
+  background-color: gray;
+  /* background-color: #6366f1; */
+  /* Indigo 500 */
+  /* color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); */
+}
+.no {
+  background-color: black;
+  color: white;
+
+  &:hover {
+    background-color: #4f46e5;
+    /* Indigo 600 */
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: #312e81;
+      /* Indigo 900 */
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+      background-color: red;
+    }
+
+    &.inactive {
+      background-color: #6366f1;
+      /* Indigo 500 */
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+  }
+}
+
+
+.link2 {
+  border: 5ps dotted black;
+  background-color: black;
+  color: white;
+
+  &:hover {
+    background-color: #4f46e5;
+    /* Indigo 600 */
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: #312e81;
+      /* Indigo 900 */
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+      background-color: red;
+    }
+
+    &.inactive {
+      background-color: #6366f1;
+      /* Indigo 500 */
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+  }
+}
+
+.link0 {
   /* @apply hover:underline hover:text-blue-400; */
   /* @apply hover:underline; */
 
@@ -8,62 +140,59 @@
   align-items: center;
   margin: 0.5rem 0;
   padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  margin: 20px;
   border-radius: 0.5rem;
   width: 100%;
-  max-width: 200px;
-  
-  border: 4px double black;
-  background-color: #3b82f6;
+  /* max-width: 200px; */
+
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: #4f46e5;
+  /* Indigo 600 - more modern than blue */
   color: white;
   text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 
   &.inactive {
     color: white;
-    opacity: 0.5;
-    border: 4px double #ef4444;
-    background-color: blue;
+    opacity: 0.8;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background-color: #6366f1;
+
+    /* Indigo 500 - lighter version */
     &:hover {
-      color: white; 
-      opacity: 0.5;
-      border: 4px double white;
-      background-color: gray;
-      text-decoration: underline;
-      /* text-decoration-line: underline;
-      text-decoration-style: double;
-      text-decoration-color: white;
-      text-decoration-thickness: 2px;
-      text-decoration-skip-ink: none;
-      text-decoration-skip: none;
-      text-decoration-skip-ink: auto;
-      text-decoration-skip: auto; */
+      color: white;
+      opacity: 1;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background-color: #4f46e5;
+      /* Indigo 600 on hover */
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
   }
-  
-  &.active {
-    /* const isActiveClass = "text-blue-200 underline border" // global */
-    color: white;
-    background-color: blue;
-    opacity: 90%;
-    
-    
-    /* background-color: #1d4ed8;
-    background-color: magenta;
-    background-color: var(--tw-bg-opacity); */
-    &:hover {
-      /* text-decoration-line: underline;
-      text-decoration-style: double;
 
-      border: 4px double white;
-      border: 4px double black;
-      background-color: gray;
-      color: black; */
-      
-      /* opacity: 50%; */
+  &.active {
+    color: white;
+    background-color: #312e81;
+    /* Indigo 900 - darker for active state */
+    opacity: 1;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    /* Glow effect */
+
+    &:hover {
+      background-color: #4338ca;
+      /* Indigo 700 - slightly lighter on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(79, 70, 229, 0.5);
     }
   }
 }
 
-.icon {
+.icon0 {
   /* const iconClass = "h-6 w-6 text-white mr-2" // only some icons */
   /* "text-blue-200 underline" */
 
@@ -79,7 +208,7 @@
   flex-direction: row;
 }
 
-.filler {
-  /* flex flex-1 */
+/* flex flex-1 */
+.filler0 {
   flex-grow: 1;
 }

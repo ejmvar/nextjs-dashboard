@@ -8,7 +8,8 @@ import React from "react";
 const navItems: ActiveLinkProps[] = [ // detailed list
   {
     text: "Home", path: "/",
-    icon: <HomeIcon  />
+    icon: <HomeIcon className="icon"  />
+    // icon: <HomeIcon   />
   },
   { text: "  ", path: "", 
     // classSpecialItem: "flex flex-1 ",
@@ -28,11 +29,7 @@ export const Navbar = () => {
           <ActiveLink
             key={item.path}
             {...item}
-            baseClass={`
             
-              
-              
-              `}
           >
           </ActiveLink>
         ))}
