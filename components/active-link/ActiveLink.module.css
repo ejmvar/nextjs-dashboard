@@ -50,13 +50,14 @@
     background-color: magenta;
     background-color: var(--tw-bg-opacity); */
     &:hover {
-      text-decoration-line: underline;
+      /* text-decoration-line: underline;
       text-decoration-style: double;
 
       border: 4px double white;
       border: 4px double black;
       background-color: gray;
-      color: black;
+      color: black; */
+      
       /* opacity: 50%; */
     }
   }
