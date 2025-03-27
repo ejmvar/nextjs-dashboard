@@ -32,17 +32,13 @@ export const ActiveLink = ({ icon,text, path, children,
                     
                     ${baseClass || ''} 
                     ${classSpecialItem || ''} 
-                    ${isActive ? { isActiveClass } : ''}
+                    // ${isActive ? { isActiveClass } : ''}
       
       `}
     >
       {children}
       {text}
-      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
       {icon && <span className="text-blue-200 underline">{icon}</span>}
-      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
-      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
-
       
     </Link>
   );

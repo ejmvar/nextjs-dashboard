@@ -4,7 +4,6 @@ import { ActiveLink, ActiveLinkProps } from '@/components';
 
 
 
-const isActiveClass = "text-blue-200 underline border" // global
 const iconClass = "h-6 w-6 text-white mr-2" // only some icons
 const navItems: ActiveLinkProps[] = [ // detailed list
   {
@@ -24,7 +23,6 @@ export const Navbar = () => {
         {navItems.map((item) => (
           <ActiveLink
             key={item.path}
-            isActiveClass={isActiveClass}
             {...item}
             // {item.icon}
             // text={item.text}
