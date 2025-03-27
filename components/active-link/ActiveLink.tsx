@@ -45,7 +45,7 @@ export const ActiveLink = ({
       {children}
       {text}
       {icon && (
-        <span className="h-8 w-8   flex justify-center items-center border-white border-5 border-double">
+        <span className={` ${style['icon-container']} `}>
           {icon}
         </span>
       )}
