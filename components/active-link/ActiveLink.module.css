@@ -11,81 +11,40 @@
   width: 100%;
   max-width: 200px;
 
-  background-color: blue;
-  text-decoration: border;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
 
-  @apply hover:underline;
-
-  &.hover {
-    color: black;
-    border: 4px double green;
-    background-color: green;
+  &.inactive {
+    color: white;
+    border: 4px double #ef4444;
+    background-color: #ef4444;
+    &:hover {
+      color: black;
+      border: 4px double #22c55e;
+      background-color: #22c55e;
+      text-decoration: underline;
+    }
   }
 
+  /* &.inactive {
+    border: 2px dotted #ef4444;
+    background-color:rgb(112, 102, 73);
+  } */
   &.active {
-    background-color: red;
-    background-color: dark-blue;
-    color: green;
-  }
-  &.active:hover {
-    border: 4px double red;
-    background-color: yellow;
+    background-color: #1d4ed8;
+    color: white;
+    &:hover {
+      border: 4px double #ef4444;
+      background-color: #eab308;
+    }
   }
 }
+
 .icon {
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 0.5rem;
   color: white;
-  background-color: blue;
-  /* &.inactive.hover {
-border: 4px double blue;
-    background-color: blue;
-    color: black;
-  } */
-  /* 
-  &.active:hover {
-    background-color: red-900;
-    color: green-100;
-  }
-  &.inactive {
-    background-color: blue-100;
-    color: red-100;
-  }
-  &.inactive:hover {
-    background-color: blue-900;
-    color: red-100;
-  } */
-  /* @apply hover:bg-blue-100 hover:bg-opacity-20
-    hover:text-red-100 hover:text-opacity-80
-    hover:border-green-200 hover:border-opacity-80
-    text-white; */
-
-  /* color: var(--color-text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
-  background-color: var(--color-background);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center; */
-
-  /* &.active {
-    color: var(--color-primary);
-    background-color: var(--color-background-active);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  } */
-
-  /* &:hover {
-    color: var(--color-primary);
-    background-color: var(--color-background-hover);
-  } */
-
-  /* &.active:hover {
-    color: var(--color-primary);
-    background-color: var(--color-background-active);
-    background-color: green-700;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  } */
+  background-color: transparent;
 }

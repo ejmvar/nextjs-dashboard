@@ -1,4 +1,4 @@
-'use client';
+'use client'; // to use usePathname from next/navigation and paint current page
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -24,21 +24,9 @@ export const ActiveLink = ({ icon,text, path, children,
       prefetch={true}
       onMouseEnter={() => { }}  // This ensures the prefetch behavior is triggered on hover
       className={`
-                    ${styles.activeLink}
+                    // ${styles.activeLink}
                     ${isActive ? styles.active : styles.inactive}
                     ${styles.link}
-                    ${styles.linkHover}
-                    ${styles.linkActive}
-                    ${styles.linkBase}
-                    ${styles.linkSpecial}
-                    ${styles.linkIcon}
-                    ${styles.linkText}
-                    ${styles.linkIconText}
-                    ${styles.linkIconTextActive}
-                    ${styles.linkIconTextInactive}
-                    ${styles.linkIconTextHover}
-                    ${styles.linkIconTextActiveHover}
-                    ${styles.linkIconTextInactiveHover}
 
 
                     
