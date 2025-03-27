@@ -1,0 +1,111 @@
+
+.link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 0.5rem 0;
+  background-color: var(--color-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  &:hover {
+    color: var(--color-primary);
+    background-color: var(--color-background-hover);
+  }
+  &.active {
+    color: var(--color-primary);
+    background-color: var(--color-background-active);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  &.disabled {
+    color: var(--color-text-disabled);
+    background-color: var(--color-background-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.loading {
+    color: var(--color-text-loading);
+    background-color: var(--color-background-loading);
+    cursor: wait;
+    pointer-events: none;
+  }
+  &.error {
+    color: var(--color-text-error);
+    background-color: var(--color-background-error);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.success {
+    color: var(--color-text-success);
+    background-color: var(--color-background-success);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.warning {
+    color: var(--color-text-warning);
+    background-color: var(--color-background-warning);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.info {
+    color: var(--color-text-info);
+    background-color: var(--color-background-info);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.dark {
+    color: var(--color-text-dark);
+    background-color: var(--color-background-dark);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.light {
+    color: var(--color-text-light);
+    background-color: var(--color-background-light);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.primary {
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.secondary {
+    color: var(--color-text-secondary);
+    background-color: var(--color-background-secondary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.tertiary {
+    color: var(--color-text-tertiary);
+    background-color: var(--color-background-tertiary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.quaternary {
+    color: var(--color-text-quaternary);
+    background-color: var(--color-background-quaternary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.quinary {
+    color: var(--color-text-quinary);
+    background-color: var(--color-background-quinary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &.senary {
+    color: var(--color-text-senary);
+    background-color: var(--color-background-senary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

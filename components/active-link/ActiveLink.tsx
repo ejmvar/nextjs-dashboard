@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import styles from './ActiveLink.module.css';
 export interface ActiveLinkProps {
   text: string;
   path: string;
@@ -12,7 +13,7 @@ export interface ActiveLinkProps {
   baseClass?: string; // applied to all links
 }
 
-export const ActiveLink = ({ text, path, children,
+export const ActiveLink = ({ icon,text, path, children,
   baseClass, isActiveClass, classSpecialItem }: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === path;
@@ -22,7 +23,26 @@ export const ActiveLink = ({ text, path, children,
       href={path}
       prefetch={true}
       onMouseEnter={() => { }}  // This ensures the prefetch behavior is triggered on hover
-      className={`  ${baseClass || ''} 
+      className={`
+                    ${styles.activeLink}
+                    ${isActive ? styles.active : styles.inactive}
+                    ${styles.link}
+                    ${styles.linkHover}
+                    ${styles.linkActive}
+                    ${styles.linkBase}
+                    ${styles.linkSpecial}
+                    ${styles.linkIcon}
+                    ${styles.linkText}
+                    ${styles.linkIconText}
+                    ${styles.linkIconTextActive}
+                    ${styles.linkIconTextInactive}
+                    ${styles.linkIconTextHover}
+                    ${styles.linkIconTextActiveHover}
+                    ${styles.linkIconTextInactiveHover}
+
+
+                    
+                    ${baseClass || ''} 
                     ${classSpecialItem || ''} 
                     ${isActive ? { isActiveClass } : ''}
       
@@ -31,6 +51,11 @@ export const ActiveLink = ({ text, path, children,
       {children}
       {text}
       {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
+      {icon && <span className="text-blue-200 underline">{icon}</span>}
+      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
+      {/* {isActive && <span className="text-blue-200 underline"> (active)</span>} */}
+
+      
     </Link>
   );
 }

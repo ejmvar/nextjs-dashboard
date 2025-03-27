@@ -32,15 +32,7 @@ export const Navbar = () => {
             // classSpecialItem : ensure attribute sent
             classSpecialItem={`${item.classSpecialItem || ''}`}
             baseClass={`
-              flex flex-row  items-center
-              mr-2 rounded p-2
-              border-4 border-double
-              border-white-900
-
-              hover:bg-blue-200   hover:bg-opacity-200
-              hover:text-red-700  hover:text-opacity-800
-              hover:border-green-200 hover:border-opacity-800
-              text-white
+            
               
               
               `}
