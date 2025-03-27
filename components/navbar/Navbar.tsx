@@ -1,16 +1,20 @@
 import { HomeIcon } from "@primer/octicons-react"
 import { ActiveLink, ActiveLinkProps } from '@/components';
+import React from "react";
 // import { ActiveLinkProps } from '@/components/active-link/ActiveLink';
 
 
 
-const iconClass = "h-6 w-6 text-white mr-2" // only some icons
 const navItems: ActiveLinkProps[] = [ // detailed list
   {
     text: "Home", path: "/",
-    icon: <HomeIcon className={`${iconClass}`} />
+    icon: <HomeIcon  />
   },
-  { text: "  ", path: "", classSpecialItem: "flex flex-1 " },
+  { text: "  ", path: "", 
+    // classSpecialItem: "flex flex-1 ",
+    isFiller: true, 
+
+  },
   { text: "About", path: "/about" },
   { text: "Contact", path: "/contact" },
   { text: "Pricing", path: "/pricing" },
@@ -24,11 +28,6 @@ export const Navbar = () => {
           <ActiveLink
             key={item.path}
             {...item}
-            // {item.icon}
-            // text={item.text}
-            // path={item.path}
-            // classSpecialItem : ensure attribute sent
-            classSpecialItem={`${item.classSpecialItem || ''}`}
             baseClass={`
             
               

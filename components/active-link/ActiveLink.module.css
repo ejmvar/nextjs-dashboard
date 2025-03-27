@@ -1,4 +1,7 @@
 .link {
+  /* @apply hover:underline hover:text-blue-400; */
+  /* @apply hover:underline; */
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -15,38 +18,67 @@
   text-decoration: none;
 
   &.inactive {
-    color: gray;
-     opacity: 0.5;
+    color: white;
+    opacity: 0.5;
     border: 4px double #ef4444;
-    background-color: #ef4444;
+    background-color: blue;
     &:hover {
-      color: black; 
+      color: white; 
       opacity: 0.5;
-      border: 4px double #22c55e;
-      background-color: #22c55e;
+      border: 4px double white;
+      background-color: gray;
       text-decoration: underline;
+      /* text-decoration-line: underline;
+      text-decoration-style: double;
+      text-decoration-color: white;
+      text-decoration-thickness: 2px;
+      text-decoration-skip-ink: none;
+      text-decoration-skip: none;
+      text-decoration-skip-ink: auto;
+      text-decoration-skip: auto; */
     }
   }
-
+  
   &.active {
     /* const isActiveClass = "text-blue-200 underline border" // global */
     color: white;
-
-
+    background-color: blue;
+    opacity: 90%;
+    
+    
     /* background-color: #1d4ed8;
     background-color: magenta;
     background-color: var(--tw-bg-opacity); */
     &:hover {
-      border: 4px double #ef4444;
-      background-color: #eab308;
+      text-decoration-line: underline;
+      text-decoration-style: double;
+
+      border: 4px double white;
+      border: 4px double black;
+      background-color: gray;
+      color: black;
+      /* opacity: 50%; */
     }
   }
 }
 
 .icon {
+  /* const iconClass = "h-6 w-6 text-white mr-2" // only some icons */
+  /* "text-blue-200 underline" */
+
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 0.5rem;
   color: white;
   background-color: transparent;
+  margin: 2px;
+
+  border: 5px double white;
+  display: flex;
+  flex-direction: row;
+}
+
+.filler {
+  /* flex flex-1 */
+  flex-grow: 1;
 }
