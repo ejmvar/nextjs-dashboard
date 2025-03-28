@@ -145,14 +145,16 @@ pwd
 echo "### REVIEW: .env =================="
 cat .env
 echo "-----------------------------------"
-bun --bun run build
+bun run build
+# bun --bun run build
 # bun --bun ng build
 # npm run build
 """
 [tasks.bun-ng-dev]
 description="run dev Angular"
 run="""
-bun --bun ng serve --host=0.0.0.0
+bun ng serve --host=0.0.0.0
+# bun --bun ng serve --host=0.0.0.0
 """
 [tasks.bun-ng-test]
 description="run test Angular"
