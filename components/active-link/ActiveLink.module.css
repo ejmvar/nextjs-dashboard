@@ -1,35 +1,37 @@
 .link { /* ok */
-  border: 5ps double black;
+  border: 5px double black;
   margin: 0 .25rem;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
 
   &:hover { /* ok */
-    /* background-color: #4f46e5; */
     border: 3px double white;
-    /* Indigo 600 */
     color: white;
     text-decoration: underline;
     text-decoration-thickness: 4px;
     text-decoration-color: red;
     transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.7);
     transition: all 0.2s ease;
-    
   }
+
   &.active { /* ok */
     background-color: green;
     border: 2px dotted yellow;
-    padding: .3rem;
-
+    padding: 0.3rem;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
   }
-  &.inactive { /* ok */
-    /* background-color: red; */
-    background-color: gray;
-    /* border: 2px dotted yellow; */
-    padding: .3rem;
 
+  &.inactive { /* ok */
+    background-color: gray;
+    padding: 0.3rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
   }
 }
 /* <span className="h-8 w-8   flex justify-center items-center border-white border-5 border-double"> */
