@@ -17,21 +17,26 @@
     text-decoration-thickness: 4px;
     text-decoration-color: red;
     transform: translateY(-2px);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.7);
+    /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.7); */
     transition: all 0.2s ease;
   }
 
   &.active { /* ok */
     background-color: green;
+    background-color: blue;
     border: 2px dotted yellow;
+    border: 2px solid white;
     padding: 0.3rem;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
   }
 
   &.inactive { /* ok */
     background-color: gray;
     padding: 0.3rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
+    border: 3px double white;
+    border: 3px double gray;
   }
 }
 /* <span className="h-8 w-8   flex justify-center items-center border-white border-5 border-double"> */
