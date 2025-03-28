@@ -1,4 +1,5 @@
-.link { /* ok */
+.link {
+  /* ok */
   border: 5px double black;
   margin: 0 .25rem;
 
@@ -10,7 +11,8 @@
   background-color: #f0f0f0;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
 
-  &:hover { /* ok */
+  &:hover {
+    /* ok */
     border: 3px double white;
     color: white;
     text-decoration: underline;
@@ -21,27 +23,30 @@
     transition: all 0.2s ease;
   }
 
-  &.active { /* ok */
-    background-color: green;
+  /* ok */
+  &.active {
     background-color: blue;
-    border: 2px dotted yellow;
     border: 2px solid white;
     padding: 0.3rem;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
   }
 
-  &.inactive { /* ok */
+  /* ok */
+  /* &.inactive {
     background-color: gray;
     padding: 0.3rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5);
     border: 3px double white;
     border: 3px double gray;
-  }
+  } */
 }
+
 /* <span className="h-8 w-8   flex justify-center items-center border-white border-5 border-double"> */
 
-.icon-container { /* ok */
+.icon-container {
+  /* ok */
   border: 3px solid black;
   display: flex;
   /* min-width: 3rem;
@@ -49,16 +54,18 @@
   justify-content: center;
   align-items: center;
   /* margin: .25rem 0; */
-  margin: 0 .25rem ;
-  padding: 0 .25rem ;
+  margin: 0 .25rem;
+  padding: 0 .25rem;
 }
+
 .icon {
   border: 3px solid black;
 }
+
 /* .link:hover {
   background-color: #4f46e5; */
-  /* Indigo 600 */
-  /* color: white;
+/* Indigo 600 */
+/* color: white;
   text-decoration: none;
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -76,6 +83,7 @@
 
   background-color: red; */
 }
+
 .inactive {
   background-color: gray;
   /* background-color: #6366f1; */
@@ -85,6 +93,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); */
 }
+
 .no {
   background-color: black;
   color: white;

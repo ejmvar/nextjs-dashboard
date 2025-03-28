@@ -11,10 +11,10 @@ export interface ActiveLinkProps {
   // baseClass?: string; // applied to all links
   isFiller?: boolean;
 }
-export const ActiveLink = ({ 
+export const ActiveLink = ({
   icon,
-  text, 
-  path, 
+  text,
+  path,
   children,
   // baseClass, 
   // isActiveClass,
@@ -22,12 +22,12 @@ export const ActiveLink = ({
 }: ActiveLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname === path;
-  
+
   // If this is a filler item, just return a spacer div
   if (isFiller) {
     return <div className="flex-1"></div>;
   }
-  
+
   return (
     <Link
       href={path}
@@ -36,10 +36,9 @@ export const ActiveLink = ({
         ${style.link}
         link
 
-        ${isActive 
-          ? style.active 
-          : style.inactive
-        }
+        // ${isActive ? style.active : style.inactive}
+
+        ${isActive && style.active}
       `}
     >
       {children}
@@ -59,8 +58,8 @@ export const ActiveLink = ({
         ${style.link}
         link
 
-        ${isActive 
-          ? 'active' 
+        ${isActive
+          ? 'active'
           : 'inactive'
         }
       `}
