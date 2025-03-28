@@ -31,7 +31,7 @@ export const ActiveLink = ({
   return (
     <Link
       href={path}
-      prefetch={true}
+      // prefetch={false}
       className={`
         ${style.link}
         ${isActive ? style.active : ""}
@@ -43,29 +43,6 @@ export const ActiveLink = ({
       {text}
       {icon && (
         <span className={` ${style['icon-container']} `}>
-          {icon}
-        </span>
-      )}
-    </Link>
-  );
-  return (
-    <Link
-      href={path}
-      prefetch={true}
-      className={`
-        ${style.link}
-        link
-
-        ${isActive
-          ? 'active'
-          : 'inactive'
-        }
-      `}
-    >
-      {children}
-      {text}
-      {icon && (
-        <span className="h-8 w-8   flex justify-center items-center border-white border-5 border-double">
           {icon}
         </span>
       )}
