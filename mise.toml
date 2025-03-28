@@ -1,0 +1,229 @@
+[tools]
+watchexec="latest"
+ripgrep = "latest"
+jq="1.6"
+yq="4.44.5"
+shellcheck="0.10.0"
+direnv="2.35.0"
+
+python="3.11"
+uv = "latest"
+ruff="0.11.0"
+
+# python dependencies
+# "pipx:slither-analyzer"="0.10.2"
+# "pipx:semgrep"="1.90.0"
+# # # "pipx:bandit"="1.7.4"
+# # # "pipx:pyupgrade"="3.2.0"
+# # # "pipx:pyenv"="latest"
+# # # "pipx:pyenv-virtualenv"="latest"
+# # # "pipx:pyenv-update"="latest"
+# # # "pipx:pyenv-virtualenvwrapper"="latest"
+# # # "pipx:pyenv-virtualenvwrapper"="latest"
+
+
+# # # "pip:pytest"="7.4.0"
+# # # "pip:pytest-cov"="4.1.0"
+# # # "pip:pytest-asyncio"="0.21.0"
+# # # "pip:pytest-benchmark"="4.0.0"
+# # # "pip:pytest-html"="3.2.0"
+# # # "pip:pytest-mock"="3.10.0"
+# # # "pip:pytest-xdist"="3.3.1"
+# # # "pip:pytest-timeout"="2.1.0"
+# # # "pip:pytest-factoryboy"="2.0.0"
+# # # "pip:pytest-flake8"="1.0.7"
+
+
+node="22"
+bun="latest"
+yarn="3.8.5"
+
+# go="1.22.2"
+go="1.23.4"
+# go="1.26"
+# go dependencies
+# "go:gotest.tools/gotestsum"="1.12.0"
+# "go:github.com/vectra/mockery/v2"="2.46.0"
+# # # "go:github.com/golangci/gocyclo"="latest"
+# "go:github.com/golangci/golangci-lint/cmd/golangci-lint"="1.61.0"
+
+# # # # "go:github.com/onsi/ginkgo/v2"="2.4.0"
+# # # # "go:github.com/onsi/gomega"="1.30.0"
+# # # # "golangci-lint"="latest"
+
+
+rust="1.84"
+# cargo dependencies
+# "cargo:just"="1.37.0"
+# "cargo:svm-rs"="0.5.0"
+
+
+# # rust-analyzer="latest"
+# # cargo-audit="latest"
+# # cargo-deny="latest"
+# # cargo-outdated="latest"
+# # cargo-udeps="latest"
+# # cargo-watch="latest"
+# # cargo-asm="latest"
+# # cargo-expand="latest"
+# # cargo-llvm-cov="latest"
+# # cargo-llvm-lines="latest"
+
+# # Foundry dependencies
+# # Foundry is a special case, because it supplies multiple binaries at the same
+# # Github release, so we need to use the aliasing trick to get mise to not error
+# # The git ref here should be on the stable branch
+# forge="nightly-111111111111111111111111111"
+# cast="nightly-111111111111111111111111111"
+# anvil="nightly-111111111111111111111111111"
+
+# # FAKE DEPENDENCIES
+# # Put things here if yoy need to track versions of tools or projects that can't
+# # actually be manages by mise (yet)
+# # Ensure to add then to 
+# # # disable_tools = ["asterisk", "kontrol", "binary-signer" ]
+# asterisk="0.0.0"
+# kontrol="0.0.0"
+# binary-signer="0.0.0"
+
+
+# [alias]
+# forge="ubi:foundry-rs/foundry[exe=forge]"
+# cast="ubi:foundry-rs/foundry[exe=cast]"
+# anvil="ubi:foundry-rs/foundry[exe=anvil]"
+
+
+[settings]
+experimental=true
+pipx.uvx=true
+disable_tools = ["asterisk", "kontrol", "binary-signer" ]
+activate_aggressive=true
+python.uv_venv_auto=true
+python.uv_venv_create_args=[".venv"]
+# python.uv_venv_create_args=["--system-site-packages"]
+
+# # python_uv_venv_auto=true
+# # python_uv_venv_auto_create=true
+# # python_uv_venv_auto_install=true
+# # python_venv=".venv"
+
+
+[tasks.mise-install]
+run="""
+# https://mise.jdx.dev/getting-started.html
+curl https://mise.run | sh
+"""
+
+[tasks.uvenv]
+run="""
+# # https://docs.astral.sh/uv/pip/environments/#using-arbitrary-python-environments
+uv venv .venv
+uv pip install --requirements requirements.txt
+uv pip install -f requirements.txt
+uv pip install -r requirements.txt
+# uv pip install -r requirements-dev.txt
+# uv pip install -r requirements-test.txt
+# uv pip install -r requirements-docs.txt
+"""
+
+[tasks.bun-ng-nextjs-start]
+description="Builds production Angular"
+run="""
+pwd
+echo "### REVIEW: .env =================="
+cat .env
+echo "-----------------------------------"
+bun --bun run start
+# bun --bun ng start
+# npm run start
+"""
+
+[tasks.bun-ng-nextjs-build]
+description="Builds production Angular"
+run="""
+pwd
+echo "### REVIEW: .env =================="
+cat .env
+echo "-----------------------------------"
+bun --bun run build
+# bun --bun ng build
+# npm run build
+"""
+[tasks.bun-ng-dev]
+description="run dev Angular"
+run="""
+bun --bun ng serve --host=0.0.0.0
+"""
+[tasks.bun-ng-test]
+description="run test Angular"
+run="""
+bun --bun ng test
+"""
+env.TEST_ENV_VAR="Abc123"
+[tasks.bun-ng-ut]
+env.TEST_ENV_VAR="Abc123-test"
+run = [
+  "echo TEST_ENV_VAR=$TEST_ENV_VAR",
+  "mise run some-task",
+  " WILL HAVE set TEST_ENV_VAR"
+  ]
+[tasks.bun-ng-e2e]
+env.TEST_ENV_VAR="Abc123-test"
+run = [
+  "echo TEST_ENV_VAR=$TEST_ENV_VAR",
+  "mise run some-task",
+  " WILL HAVE set TEST_ENV_VAR"
+  ]
+
+[tasks.bun-init-1-try-notbun]
+run="bun init"
+# cwd="."
+[tasks.bun-init-0-try-bun]
+run="""
+pwd
+bun --bun init
+"""
+# run="bun --bun init"
+# cwd="."
+[tasks.bun-install-0-try-bun]
+run="bun --bun install"
+# cwd="."
+[tasks.bun-install-1-try-notbun]
+run="bun install"
+# cwd="."
+[tasks.bun-dev]
+run="bun --bun run dev"
+# cwd="."
+[tasks.bun-install-shadcn]
+run="""
+bunx --bun add shadcn@latest init
+bunx --bun add shadcn@latest add button
+bunx --bun add shadcn@latest add alert-dialog
+bunx --bun add shadcn@latest add checkbox
+bunx --bun add shadcn@latest add radio-group
+bunx --bun add shadcn@latest add select
+bunx --bun add shadcn@latest add toast
+bunx --bun add shadcn@latest add tooltip
+
+# # # bun add -D @shadcn/ui
+# # # bun add -D @shadcn/ui@latest
+# # # bun add -D @shadcn/ui@latest --tag shadcn
+# # # bun add -D @shadcn/ui@latest --tag shadcn --no-commit
+# # # bun add -D @shadcn/ui@latest --tag shadcn --no-commit --no-verify
+"""
+
+[tasks.INSTALL-tools]
+description="Install tools"
+run="""
+./INSTALL-tools.sh
+"""
+
+[env]
+# TEST_ENV_VAR="Abc123"
+NODE_ENV="development"
+'_'.file =".env"
+ 
+
+ [hooks]
+ enter = "mise i -q"
+
