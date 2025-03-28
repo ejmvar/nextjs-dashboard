@@ -34,8 +34,6 @@ export const ActiveLink = ({
       prefetch={true}
       className={`
         ${style.link}
-        link
-        ${isActive ? style.active : style.inactive}
         ${isActive ? style.active : ""}
 
 
