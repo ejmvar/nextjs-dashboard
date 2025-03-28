@@ -35,10 +35,10 @@ export const ActiveLink = ({
       className={`
         ${style.link}
         link
+        ${isActive ? style.active : style.inactive}
+        ${isActive ? style.active : ""}
 
-        // ${isActive ? style.active : style.inactive}
 
-        ${isActive && style.active}
       `}
     >
       {children}
